@@ -1,0 +1,6 @@
+sudo: require
+services : 
+  - docker
+
+before_isntall:
+  - docker build -t chiayu2000/web -f Dockerfile.dev .
