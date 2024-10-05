@@ -1,4 +1,10 @@
 sudo: require
+
+language: node_js
+
+node_js:
+  - "14"  # Specify the Node.js version
+
 services : 
   - docker
 
@@ -7,3 +13,10 @@ before_isntall:
 
 scripts:
   - docker run -e CI = true chiayu2000/web npm test
+
+env:
+  - NODE_OPTIONS=--max_old_space_size=2048  # Limit Node.js memory usage
+
+cache:
+  directories:
+    - node_modules  # Cache node_modules for faster builds
