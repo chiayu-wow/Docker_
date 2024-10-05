@@ -9,7 +9,7 @@ before_isntall:
   - docker build -t chiayu2000/web -f ./web_/myWeb/Dockerfile.dev ./web_/myWeb
 
 scripts:
-  - docker run -e CI = true chiayu2000/web npm test
+  - docker run -e CI=true chiayu2000/web npm test
 
 env:
   - NODE_OPTIONS=--max_old_space_size=2048  # Limit Node.js memory usage
