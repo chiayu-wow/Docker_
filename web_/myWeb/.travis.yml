@@ -4,3 +4,6 @@ services :
 
 before_isntall:
   - docker build -t chiayu2000/web -f Dockerfile.dev .
+
+scripts:
+  - docker run -e CI = true chiayu2000/web npm test
