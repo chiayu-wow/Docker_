@@ -2,9 +2,6 @@ sudo: require
 
 language: node_js
 
-node_js:
-  - "14"  # Specify the Node.js version
-
 services : 
   - docker
 
