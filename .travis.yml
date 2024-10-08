@@ -6,7 +6,7 @@ services :
   - docker
 
 before_isntall:
-  - docker build -t chiayu2000/web -f ./web_/myWeb/Dockerfile.dev ./web_/myWeb
+  - docker-compose up --build
 
 scripts:
   - docker run -e CI=true chiayu2000/web npm test
@@ -17,3 +17,15 @@ env:
 cache:
   directories:
     - node_modules  # Cache node_modules for faster builds
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-1'              # AWS region (step 1)
+  app: 'docker'                    # Application Name in Elastic Beanstalk (step 2)
+  env: 'docker-env'                # Beanstalk Environment Name in lowercase (step 3)
+  bucket_name: 'elasticbeanstalk-us-east-2-061039788601' # S3 bucket name (step 4)
+  bucket_path: 'docker'            # S3 bucket path (step 5)
+  access_key_id: $AWS_ACCESS_KEY   # Access Key (step 6 - should be stored securely in Travis)
+  secret_access_key: $AWS_SECRET_KEY # Secret Key (step 7 - should be stored securely in Travis)
+  on:
+    branch: main                   # Only deploy when changes are pushed to the main branch
