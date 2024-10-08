@@ -16,7 +16,8 @@ COPY . .
 # Build the application
 RUN npm run build
 
-FROM nginx
+# Step 2: Serve the React app with Nginx
+FROM nginx:alpine
 
 EXPOSE 80
 

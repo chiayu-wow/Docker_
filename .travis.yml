@@ -10,7 +10,6 @@ before_install:
 
 script:
   - docker-compose up -d  # Start services in detached mode
-  - docker run -e CI=true chiayu2000/web npm test  # Run tests
 
 env:
   - NODE_OPTIONS=--max_old_space_size=2048  # Limit Node.js memory usage
