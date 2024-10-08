@@ -27,7 +27,7 @@ deploy:
   app: 'frontend'                    # Application Name in Elastic Beanstalk (step 2)
   env: 'Frontend-env'                # Beanstalk Environment Name in lowercase (step 3)
   bucket_name: 'elasticbeanstalk-us-east-2-061039788601' # S3 bucket name (step 4)
-  bucket_path: 's3://elasticbeanstalk-us-east-2-061039788601/resources/'            # S3 bucket path (step 5)
+  bucket_path: 'https://elasticbeanstalk-us-east-2-061039788601.s3.us-east-2.amazonaws.com/resources/'            # S3 bucket path (step 5)
   access_key_id: $AWS_ACCESS_KEY   # Access Key (step 6 - should be stored securely in Travis)
   secret_access_key: $AWS_SECRET_KEY # Secret Key (step 7 - should be stored securely in Travis)
   on:
