@@ -1,15 +1,16 @@
-sudo: require
+sudo: required
 
 language: node_js
 
-services : 
+services: 
   - docker
 
-before_isntall:
-  - docker-compose up --build
+before_install:
+  - docker-compose build  # Build the Docker containers
 
-scripts:
-  - docker run -e CI=true chiayu2000/web npm test
+script:
+  - docker-compose up -d  # Start services in detached mode
+  - docker run -e CI=true chiayu2000/web npm test  # Run tests
 
 env:
   - NODE_OPTIONS=--max_old_space_size=2048  # Limit Node.js memory usage
