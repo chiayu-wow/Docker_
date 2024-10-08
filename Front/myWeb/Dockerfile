@@ -19,9 +19,6 @@ RUN npm run build
 # Step 2: Serve the React app with Nginx
 FROM nginx:alpine
 
-EXPOSE 3000
+EXPOSE 80
 
 COPY --from=build /app/dist /usr/share/nginx/html
-
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]

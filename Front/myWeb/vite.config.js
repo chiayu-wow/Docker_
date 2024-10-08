@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: '0.0.0.0', // This allows access from outside the container
-    port: 3000,
+    port: 80,
   },
   
 })

@@ -31,6 +31,4 @@ deploy:
   access_key_id: $AWS_ACCESS_KEY   # Access Key (step 6 - should be stored securely in Travis)
   secret_access_key: $AWS_SECRET_KEY # Secret Key (step 7 - should be stored securely in Travis)
   on:
-      branches:
-        only:
-          - main
+     - main
