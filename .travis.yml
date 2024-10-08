@@ -21,7 +21,7 @@ cache:
 
 deploy:
   provider: elasticbeanstalk
-  region: 'us-east-1'              # AWS region (step 1)
+  region: 'us-east-2'              # AWS region (step 1)
   app: 'docker'                    # Application Name in Elastic Beanstalk (step 2)
   env: 'docker-env'                # Beanstalk Environment Name in lowercase (step 3)
   bucket_name: 'elasticbeanstalk-us-east-2-061039788601' # S3 bucket name (step 4)
