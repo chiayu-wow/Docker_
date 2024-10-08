@@ -34,5 +34,3 @@ deploy:
       branches:
         only:
           - main
-
-arn:aws:s3:::elasticbeanstalk-us-east-2-061039788601
