@@ -4,5 +4,6 @@ services:
     build:
       context: ./Front/myWeb
       dockerfile: Dockerfile
+    image: chiayu2000/web:latest
     ports:
       - '3000:80'
