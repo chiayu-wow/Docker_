@@ -1,0 +1,23 @@
+version: '3'  # Specifies the version of Docker Compose format being used.
+
+## Run. two container and network them together
+services:
+
+  myweb:  # Defines a service named "node-app".
+    restart: always  # Ensures that the container restarts automatically if it stops or crashes.
+    build:   # Builds the Docker image for this service from the Dockerfile in the current directory.
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:  
+      - "3000:3000"  # Maps port 3000 on the host machine to port 3000 in the container, allowing access to the node app.
+    volumes:
+      - .:/app
+      - /app/node_modules
+  
+  test:  # Defines a service named "node-app".
+    restart: always  # Ensures that the container restarts automatically if it stops or crashes.
+    build: .  # Builds the Docker image for this service from the Dockerfile in the current directory.
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: ['npm' , 'test']
