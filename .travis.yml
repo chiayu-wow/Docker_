@@ -31,4 +31,3 @@ deploy:
   on:
     branch: main  # Only deploy when changes are pushed to the main branch
 
-s3://elasticbeanstalk-us-east-2-061039788601/.elasticbeanstalk
