@@ -2,7 +2,7 @@ version: '3'
 services:
   web:
     build:
-      context: /Users/chiayuwang1012/Desktop/docker/Front/myWeb
+      context: ./Front/myWeb
       dockerfile: Dockerfile
     ports:
       - '3000:80'
