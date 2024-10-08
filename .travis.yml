@@ -30,6 +30,5 @@ deploy:
   bucket_path: 'https://elasticbeanstalk-us-east-2-061039788601.s3.us-east-2.amazonaws.com/.elasticbeanstalk'            # S3 bucket path (step 5)
   access_key_id: $AWS_ACCESS_KEY   # Access Key (step 6 - should be stored securely in Travis)
   secret_access_key: $AWS_SECRET_KEY # Secret Key (step 7 - should be stored securely in Travis)
-  on:
-    branch: main  # Only deploy when changes are pushed to the main branch
+
 
